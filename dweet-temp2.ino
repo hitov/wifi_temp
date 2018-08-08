@@ -5,8 +5,15 @@
 #include <OneWire.h>
 #include <DallasTemperature.h>
 
+const int dummy = 0;
+
 // OTA update
-const int FW_VERSION = 0002;
+#ifdef OTA_VERSION
+int FW_VERSION = OTA_VERSION;
+#else
+int FW_VERSION = 0003;
+#endif
+
 const char* fwUrlBase = "http://ban-go.tk/fota/";
 
 // WiFi settings
